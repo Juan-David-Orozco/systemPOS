@@ -1,4 +1,8 @@
 export { MainPage } from './MainPage'
+export { MenuPage } from './MenuPage'
+export { CostsPage } from './CostsPage'
+export { InventoryPage } from './InventoryPage'
+export { BillingPage } from './BillingPage'
 export { LoginPage } from './LoginPage'
 export { RegisterPage } from './RegisterPage'
 export { NotFoundPage } from './NotFoundPage'
