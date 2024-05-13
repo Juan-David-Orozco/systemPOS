@@ -1,4 +1,4 @@
-/* Body */
+/* HTML General (Diagramation) */
 body {
   margin: 0;
   /* display: flex; */
@@ -10,7 +10,17 @@ body {
   background: linear-gradient(to right, rgb(38, 37, 39), rgb(68, 74, 85))
 }
 
-/* Botones */
+main {
+  min-height: 100vh;
+  /* padding: 10px; */
+}
+
+section {
+  min-height: 100vh;
+}
+
+/* HTML Especifico (Styles) */
+/* Buttons */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -29,8 +39,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-/* Enlaces */
+/* Links */
 a {
   font-weight: 500;
   color: #646cff;

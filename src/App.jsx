@@ -23,7 +23,7 @@ function App() {
             <Route path="/register" element={ <RegisterPage/> } />
             <Route path="/*" element={<NotFoundPage />} />
           </Routes>
-          <footer className='bg-light rounded'>Todos los derechos reservados</footer>
+          <footer className='bg-light'>Todos los derechos reservados</footer>
         </Router>
       </AuthProvider>
     </>

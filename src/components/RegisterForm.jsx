@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/authContext'
 
-
 export function RegisterForm() {
 
 	const [user, setUser] = useState({ email: "", password: "" })
@@ -21,8 +20,8 @@ export function RegisterForm() {
 		try {
 			console.log(user.email, user.password)
 			await register(user.email, user.password)
-			setError("Registro Exitoso")
-			setUser({ email: "", password: "" })
+			// setError("Registro Exitoso")
+			// setUser({ email: "", password: "" })
 			navigate("/")
 		} catch (error) {
 			console.log(error)
@@ -38,35 +37,33 @@ export function RegisterForm() {
 
 
 	return (
-		<div>
+		<>
 			<h3 className="fw-bold mb-2 mt-1 pt-2 pb-3 text-uppercase">Register</h3>
 			<p className="text-white-50 mb-3">Please enter your email and password!</p>
-			{error && <div>{error}</div>}
+			{error && <div className='text-danger'>{error}</div>}
 			<form onSubmit={handleSubmit}>
 
 				<div className="form-floating text-dark my-2 py-1">
 					<input
-						type="email" name="email" id="email" 
+						type="email" name="email" id="InputEmail" 
 						className='form-control' placeholder='email'
 						onChange={handleChange}
 					/>
-					<label htmlFor="email">Email</label>
+					<label htmlFor="InputEmail">Email</label>
 				</div>
 				<div className="form-floating text-dark my-2 py-1">
 					<input
-						type="password" name="password" id="password" 
+						type="password" name="password" id="InputPassword" 
 						placeholder="password" className='form-control'
 						onChange={handleChange}
 					/>
-					<label htmlFor="password">Password</label>
+					<label htmlFor="InputPassword">Password</label>
 				</div>
-				<div className="mt-2 py-3">
+				<div className="mt-4 py-3">
         	<button id='btn-register' className="btn btn-outline-light btn-md px-5" type="submit">REGISTER</button>
       	</div>
 
-				{/* <button className='mt-3 bg-secondary btn btn-block'>Register</button> */}
-
 			</form>
-		</div>
+		</>
 	)
 }

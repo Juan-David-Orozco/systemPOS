@@ -1,18 +1,16 @@
+/* Styles - Class & Id */
+
 /* HTML Raiz (Root) */
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   text-align: center;
+  /* justify-content: center; */
   min-height: 100vh;
 }
 
-main {
-  min-height: 100vh;
-  padding: 10px;
-}
-
-/* LOGIN */
+/* LOGIN & REGISTER */
 .gradient-custom {
   /* fallback for old browsers */
   background: #6a11cb;
@@ -22,13 +20,10 @@ main {
   background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
 }
 
-div#formContainer{
-  /* border-radius: 1rem; */
+#RowContainerRegister, #RowContainerLogin {
   min-height: 100vh;
-  /* justify-content: center;
-  align-items: center; */
 }
 
-section {
-  min-height: 100vh;
+#CardContainerRegister, #CardContainerLogin {
+  border-radius: 1rem;
 }
