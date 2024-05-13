@@ -1,4 +1,5 @@
 export { MainPage } from './MainPage'
+export { ProductsPage } from './ProductsPage'
 export { MenuPage } from './MenuPage'
 export { CostsPage } from './CostsPage'
 export { InventoryPage } from './InventoryPage'

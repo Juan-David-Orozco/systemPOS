@@ -1,5 +1,5 @@
 import { useContext, createContext, useEffect, useState } from 'react'
-import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../services/firebase'
 
 const authContext = createContext()
@@ -11,28 +11,6 @@ export const useAuth = () => {
 }
 
 export function AuthProvider({ children }) {
-
-	console.log(auth.currentUser)
-
-	const user = auth.currentUser
-
-	if (user !== null) {
-		// The user object has basic properties such as display name, email, etc.
-		const { displayName, email, photoURL, emailVerified } = user
-		// The user's ID, unique to the Firebase project. Do NOT use
-		// this value to authenticate with your backend server, if
-		// you have one. Use User.getToken() instead.
-		const uid = user.uid;
-		console.log(uid, displayName, email, photoURL, emailVerified)
-
-		user.providerData.forEach((profile) => {
-			console.log("Sign-in provider: " + profile.providerId);
-			console.log("  Provider-specific UID: " + profile.uid);
-			console.log("  Name: " + profile.displayName);
-			console.log("  Email: " + profile.email);
-			console.log("  Photo URL: " + profile.photoURL);
-		});
-	}
 
 	const [userLogin, setUserLogin] = useState(null)
 
@@ -46,10 +24,16 @@ export function AuthProvider({ children }) {
 		return signInWithEmailAndPassword(auth, email, password)
 	}
 
+	const logout = () => {
+		setUserLogin(null)
+		setLoading(true)
+    return signOut(auth)
+  }
+
 	useEffect(() => {
 		console.log('Auth provider loaded')
 		const unsubscribe = onAuthStateChanged(auth, currentUser => {
-			console.log(currentUser.uid)
+			console.log(currentUser)
 			if(currentUser) {
 				setUserLogin(currentUser)
 				setLoading(false)
@@ -60,7 +44,7 @@ export function AuthProvider({ children }) {
 
 	return (
 		<authContext.Provider
-			value={{ register, login, userLogin, loading }}
+			value={{ register, login, logout, userLogin, loading }}
 		>
 			{children}
 		</authContext.Provider>
