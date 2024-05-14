@@ -1,8 +1,8 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { AuthProvider } from "./context/authContext";
-import { MainPage, LoginPage, RegisterPage, NotFoundPage, MenuPage, InventoryPage, CostsPage, BillingPage } from './pages/IndexPages'
-import { Navigation, ProtectedRoute } from './components/IndexComponents'
+import { MainPage, LoginPage, RegisterPage, NotFoundPage, MenuPage, InventoryPage, CostsPage, BillingPage, UserInfoPage, UserSettingsPage } from './pages/IndexPages'
+import { OffCanva, Navigation, ProtectedRoute } from './components/IndexComponents'
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <AuthProvider>
         <Router>
           <header> <Navigation /> </header>
+          <div>  <OffCanva /> </div>
           <Routes>
 
             <Route path="/" element={ <MainPage/> } />
@@ -32,6 +33,17 @@ function App() {
             <Route path="/billing" element={
               <ProtectedRoute>
                 <BillingPage /> 
+              </ProtectedRoute>
+            }/>
+
+            <Route path="/user-info" element={
+              <ProtectedRoute>
+                <UserInfoPage /> 
+              </ProtectedRoute>
+            }/>
+            <Route path="/user-settings" element={
+              <ProtectedRoute>
+                <UserSettingsPage /> 
               </ProtectedRoute>
             }/>
 

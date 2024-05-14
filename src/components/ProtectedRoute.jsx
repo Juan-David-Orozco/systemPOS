@@ -5,12 +5,12 @@ export function ProtectedRoute({children}) {
 
   const { userLogin , loading } = useAuth()
 
-  if(loading)
-    return (
-      <div className='bg-white w-full max-w-xs m-auto text-center px-3 py-4 rounded'>
-        <h1 className='font-bold'>Loading</h1>
-      </div>
-    )
+  // if(loading)
+  //   return (
+  //     <div className='bg-white w-full max-w-xs m-auto text-center px-3 py-4 rounded'>
+  //       <h1 className='font-bold'>Loading</h1>
+  //     </div>
+  //   )
 
   if(!userLogin) return <Navigate to={'/login'} />
 

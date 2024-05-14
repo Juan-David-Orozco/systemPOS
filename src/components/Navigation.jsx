@@ -1,27 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useAuth } from '../context/authContext'
 
 export function Navigation() {
 
-  const { userLogin, logout } = useAuth()
+  const { userLogin } = useAuth()
   console.log(userLogin)
 
-  const navigate = useNavigate()
-
-  const handleLogout = async () => {
-    try {
-      await logout()
-      navigate("/login")
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  if (userLogin) console.log(userLogin.photoURL)
 
   if(!userLogin) {
     return (
       <>
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-sm navbar-info bg-secondary">
           <div className="container-fluid">
   
             <Link className="navbar-brand" to={"/#"}>SistemaPOS</Link>
@@ -41,6 +32,15 @@ export function Navigation() {
                 <li className="nav-item">
                   <Link to="/menu" className="nav-link">Menu</Link>
                 </li>
+                {/* <li className="nav-item">
+                  <Link to="/costs" className="nav-link">Costos</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/inventory" className="nav-link">Inventario</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/billing" className="nav-link">Facturacion</Link>
+                </li> */}
               </ul>
               <ul className='navbar-nav'>
                 <li className="nav-item">
@@ -90,7 +90,7 @@ export function Navigation() {
                 </li>
               </ul>
               <ul className='navbar-nav'>
-                <li className="nav-item dropdown">
+                {/* <li className="nav-item dropdown">
                   <Link className="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <FontAwesomeIcon icon="fa-solid fa-chevron-down" />
                   </Link>
@@ -98,8 +98,17 @@ export function Navigation() {
                     <li><Link className="dropdown-item" to={"/register"}>User Info</Link></li>
                     <li><Link className="dropdown-item" onClick={handleLogout} >Another action</Link></li>
                   </ul>
+                </li> */}
+                <li className="nav-item">
+                  <Link className='bg-dark px-2 py-1' data-bs-toggle="offcanvas" to="#offcanvasExample" role="button" aria-controls="offcanvasExample" id="avatar-icon">
+                    <FontAwesomeIcon icon="fa-solid fa-user" />
+                  </Link>
+                  {/* <button className="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <FontAwesomeIcon icon="fa-solid fa-user" id="avatar-icon" />
+                  </button> */}
                 </li>
               </ul>
+              
             </div>
   
           </div>
