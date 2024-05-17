@@ -14,12 +14,12 @@ export function Navigation() {
       <>
         <nav className="navbar navbar-expand-sm navbar-info bg-secondary">
           <div className="container-fluid">
-  
+
             <Link className="navbar-brand" to={"/#"}>SistemaPOS</Link>
             <button 
               className="navbar-toggler" type="button" 
-              data-bs-toggle="collapse" data-bs-target="#navbar1" aria-controls="navbar1" 
-              aria-expanded="false" aria-label="Toggle navigation"
+              data-bs-toggle="collapse" data-bs-target="#navbar1" 
+              aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -62,14 +62,18 @@ export function Navigation() {
         <nav className="navbar navbar-expand-sm navbar-light bg-light">
           <div className="container-fluid">
 
-            <button 
-              className="navbar-toggler" type="button" 
-              data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" 
-              aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-  
-            <Link className="navbar-brand" to={"/#"}>SistemaPOS</Link>
+              {/* <nav className="navbar navbar-expand-* bg-info "> */}
+              <button 
+                className="navbar-toggler" type="button" 
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" 
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation"
+                >
+                <FontAwesomeIcon icon="fa-solid fa-bars-staggered" />
+              </button>
+              {/* </nav> */}
+              <Link className="navbar-brand" to={"/#"}>SistemaPOS</Link>
+            {/* <div className='d-flex' >
+            </div> */}
             <button 
               className="navbar-toggler" type="button" 
               data-bs-toggle="collapse" data-bs-target="#navbar2" aria-controls="navbarSupportedContent" 
