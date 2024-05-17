@@ -74,13 +74,13 @@ export function Navigation() {
               <Link className="navbar-brand" to={"/#"}>SistemaPOS</Link>
             {/* <div className='d-flex' >
             </div> */}
-            <button 
+            {/* <button 
               className="navbar-toggler" type="button" 
               data-bs-toggle="collapse" data-bs-target="#navbar2" aria-controls="navbarSupportedContent" 
               aria-expanded="false" aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
-            </button>
+            </button> */}
   
             <div className="collapse navbar-collapse" id="navbar2">
               <ul className='navbar-nav mx-auto'>
@@ -110,17 +110,29 @@ export function Navigation() {
                     <li><Link className="dropdown-item" onClick={handleLogout} >Another action</Link></li>
                   </ul>
                 </li> */}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className='bg-dark px-2 py-1' data-bs-toggle="offcanvas" to="#offcanvasExample" role="button" aria-controls="offcanvasExample" id="avatar-icon">
                     <FontAwesomeIcon icon="fa-solid fa-user" />
                   </Link>
-                  {/* <button className="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                  <button className="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <FontAwesomeIcon icon="fa-solid fa-user" id="avatar-icon" />
-                  </button> */}
-                </li>
+                  </button>
+                </li> */}
               </ul>
               
             </div>
+
+            <ul className='navbar-nav'>
+              <li className="nav-item">
+                <Link className='bg-dark px-2 py-1' data-bs-toggle="offcanvas" to="#offcanvasExample" role="button" aria-controls="offcanvasExample" id="avatar-icon">
+                  <FontAwesomeIcon icon="fa-solid fa-user" />
+                </Link>
+                {/* <button className="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <FontAwesomeIcon icon="fa-solid fa-user" id="avatar-icon" />
+                  </button> */}
+              </li>
+            </ul>
+
   
           </div>
         </nav>

@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useAuth } from '../context/authContext'
+import { Link } from 'react-router-dom'
 
 export function SideBar() {
   const { userLogin } = useAuth()
@@ -21,23 +23,20 @@ export function SideBar() {
             </div>
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <li className="nav-item">
+                  <Link to="/" className="nav-link active">Home</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Link</a>
+                  <Link to="/menu" className="nav-link">Menu</Link>
                 </li>
-                <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="#">Action</a></li>
-                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                    </li>
-                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
+                <li className="nav-item">
+                  <Link to="/costs" className="nav-link">Costos</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/inventory" className="nav-link">Inventario</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/billing" className="nav-link">Facturacion</Link>
                 </li>
               </ul>
             </div>
