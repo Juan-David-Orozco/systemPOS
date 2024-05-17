@@ -20,8 +20,26 @@
   background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
 }
 
-#RowContainerRegister, #RowContainerLogin {
+#RowContainerMain,
+#RowContainerMenu,
+#RowContainerRegister, 
+#RowContainerLogin, 
+#RowContainerSideBar, 
+#RowContainerCosts,
+#RowContainerBilling,
+#RowContainerProducts,
+#RowContainerUserSettings,
+#RowContainerUserInfo,
+#RowContainerNotFound
+/* #ColumnContainerSideBar,
+#ColumnContainerMainPage */
+{
   min-height: 100vh;
+}
+
+#ColumnContainerSideBar,
+#ColumnContainerMainPage {
+  height: 100vh;
 }
 
 #CardContainerRegister, #CardContainerLogin {
