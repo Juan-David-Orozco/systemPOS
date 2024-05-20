@@ -52,5 +52,7 @@
 
 #avatar {
   /* width: 50%; */
-  height: 150px;
+  min-height: 150px;
+  height: 180px;
+  border-radius: 50%;
 }

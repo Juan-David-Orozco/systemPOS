@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { AuthProvider } from "./context/authContext";
-import { MainPage, LoginPage, RegisterPage, NotFoundPage, MenuPage, InventoryPage, CostsPage, BillingPage, UserInfoPage, UserSettingsPage } from './pages/IndexPages'
+import { MainPage, LoginPage, RegisterPage, NotFoundPage, MenuPage, InventoryPage, CostsPage, BillingPage, UserInfoPage, UserSettingsPage, ProductsPage } from './pages/IndexPages'
 import { SideBar, OffCanva, Navigation, ProtectedRoute } from './components/IndexComponents'
 
 function App() {
@@ -10,12 +10,13 @@ function App() {
       <AuthProvider>
         <Router>
           <header> <Navigation /> </header>
-          <div> <SideBar /> </div>
-          <div> <OffCanva /> </div>
+          <div className='sidebar-navigation' > <SideBar /> </div>
+          <div className='offcanva-navigation'> <OffCanva /> </div>
           <Routes>
 
             <Route path="/" element={ <MainPage/> } />
             <Route path="/menu" element={ <MenuPage/> } />
+            <Route path="/products" element={ <ProductsPage /> } />
 
             <Route path="/login" element={ <LoginPage/> } />
             <Route path="/register" element={ <RegisterPage/> } />
